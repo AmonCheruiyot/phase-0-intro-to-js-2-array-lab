@@ -1,5 +1,5 @@
 require ( './helpers.js' );
-
+let cats = ["Milo", "Otis", "Garfield"];
 describe('index.js', function () {
   describe('cats', function () {
     it('is assigned an initial value of ["Milo", "Otis", "Garfield"]', function () {
@@ -79,3 +79,19 @@ describe('index.js', function () {
     });
   });
 });
+function destructivelyAppendCat(name) { cats.push(name);
+}
+function destructivelyPrependCat(name) { cats.unshift(name);
+}
+function destructivelyRemoveFirstCat() { cats.shift();
+}
+function destructivelyRemoveLastCat() { cats.pop();
+}
+function appendCat(name) { return cats.concat(name);
+}
+function prependCat(name) { return [name, ...cats];
+}
+function removeLastCat() { return cats.slice(0, -1);
+}
+function removeFirstCat() { return cats.slice(1);
+}
